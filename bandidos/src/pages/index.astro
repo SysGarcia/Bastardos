@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bastardos 🎨</title>
+    <style>
+      @font-face {
+        font-family: "StreetSoul";
+        src: url("../fonts/StreetSoul.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "GimbalExtendedRegular";
+        src: url("../fonts/GimbalExtendedRegular.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "SteelFish";
+        src: url("../fonts/SteelFish.otf") format("opentype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      /* Efecto de desenfoque */
+      .blur-background {
+        backdrop-filter: blur(5px);
+        transition: filter 0.3s ease;
+      }
+
+      .mouse_scroll.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.3s ease,
+          visibility 0.3s ease;
+      }
+
+      .mouse_scroll {
+        display: block;
+        margin: 0 auto;
+        width: 24px;
+        height: 100px;
+      }
+
+      .m_scroll_arrows {
+        display: block;
+        width: 5px;
+        height: 5px;
+        -ms-transform: rotate(45deg); /* IE 9 */
+        -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+        transform: rotate(45deg);
+
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+        margin: 0 0 3px 4px;
+
+        width: 16px;
+        height: 16px;
+      }
+
+      .unu {
+        margin-top: 1px;
+      }
+
+      .unu,
+      .doi,
+      .trei {
+        -webkit-animation: mouse-scroll 1s infinite;
+        -moz-animation: mouse-scroll 1s infinite;
+        animation: mouse-scroll 1s infinite;
+      }
+
+      .unu {
+        -webkit-animation-delay: 0.1s;
+        -moz-animation-delay: 0.1s;
+        -webkit-animation-direction: alternate;
+
+        animation-direction: alternate;
+        animation-delay: alternate;
+      }
+
+      .doi {
+        -webkit-animation-delay: 0.2s;
+        -moz-animation-delay: 0.2s;
+        -webkit-animation-direction: alternate;
+
+        animation-delay: 0.2s;
+        animation-direction: alternate;
+
+        margin-top: -6px;
+      }
+
+      .trei {
+        -webkit-animation-delay: 0.3s;
+        -moz-animation-delay: 0.3s;
+        -webkit-animation-direction: alternate;
+
+        animation-delay: 0.3s;
+        animation-direction: alternate;
+
+        margin-top: -6px;
+      }
+
+      .mouse {
+        height: 42px;
+        width: 24px;
+        border-radius: 14px;
+        transform: none;
+        border: 2px solid white;
+        top: 170px;
+      }
+
+      .wheel {
+        height: 5px;
+        width: 2px;
+        display: block;
+        margin: 5px auto;
+        background: white;
+        position: relative;
+
+        height: 4px;
+        width: 4px;
+        border: 2px solid #fff;
+        -webkit-border-radius: 8px;
+        border-radius: 8px;
+      }
+
+      .wheel {
+        -webkit-animation: mouse-wheel 0.6s linear infinite;
+        -moz-animation: mouse-wheel 0.6s linear infinite;
+        animation: mouse-wheel 0.6s linear infinite;
+      }
+
+      @-webkit-keyframes mouse-wheel {
+        0% {
+          opacity: 1;
+          -webkit-transform: translateY(0);
+          -ms-transform: translateY(0);
+          transform: translateY(0);
+        }
+
+        100% {
+          opacity: 0;
+          -webkit-transform: translateY(6px);
+          -ms-transform: translateY(6px);
+          transform: translateY(6px);
+        }
+      }
+      @-moz-keyframes mouse-wheel {
+        0% {
+          top: 1px;
+        }
+        25% {
+          top: 2px;
+        }
+        50% {
+          top: 3px;
+        }
+        75% {
+          top: 2px;
+        }
+        100% {
+          top: 1px;
+        }
+      }
+      @-o-keyframes mouse-wheel {
+        0% {
+          top: 1px;
+        }
+        25% {
+          top: 2px;
+        }
+        50% {
+          top: 3px;
+        }
+        75% {
+          top: 2px;
+        }
+        100% {
+          top: 1px;
+        }
+      }
+      @keyframes mouse-wheel {
+        0% {
+          top: 1px;
+        }
+        25% {
+          top: 2px;
+        }
+        50% {
+          top: 3px;
+        }
+        75% {
+          top: 2px;
+        }
+        100% {
+          top: 1px;
+        }
+      }
+
+      @-webkit-keyframes mouse-scroll {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @-moz-keyframes mouse-scroll {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @-o-keyframes mouse-scroll {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes mouse-scroll {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes noise {
+        0%,
+        100% {
+          transform: translate(0);
+        }
+        10% {
+          transform: translate(-5%, -5%);
+        }
+        20% {
+          transform: translate(-15%, 5%);
+        }
+        30% {
+          transform: translate(7%, -25%);
+        }
+        40% {
+          transform: translate(-5%, 25%);
+        }
+        50% {
+          transform: translate(-15%, 10%);
+        }
+        60% {
+          transform: translate(15%, -5%);
+        }
+        70% {
+          transform: translate(5%, 15%);
+        }
+        80% {
+          transform: translate(3%, 35%);
+        }
+        90% {
+          transform: translate(-10%, 10%);
+        }
+      }
+
+	  #app::after {
+		content: "";
+		position: fixed;
+		z-index: 9999;
+		top: -300%;
+		left: -150%;
+		height: 700%;
+		width: 700%;
+		background-image: url(/assets/noisy.png);
+		background-size: 200px;
+		background-repeat: repeat;
+		opacity: 0.25;
+		pointer-events: none;
+		animation: noise 7s steps(10) infinite;
+		}
+		
+		.fade-in {
+			opacity: 0; /* Comienza siendo invisible */
+			transition: opacity 2s ease-in-out; /* La transición dura 2 segundos */
+			}
+
+			.visible {
+			opacity: 1; /* Cuando es visible, tendrá opacidad 1 (totalmente visible) */
+			}
+
+		.neon_yellow{
+			text-shadow:
+			0 0 5px #fff000,    /* Primer halo */
+			0 0 10px #fff000,   /* Segundo halo */
+			0 0 20px #fff000,   /* Tercer halo */
+			0 0 40px #ffcc00,   /* Cuarto halo más intenso */
+			0 0 80px #ffcc00,   /* Quinto halo más intenso */
+			0 0 90px #ffcc00;   /* Sexto halo más intenso */
+		}
+		/*
+			0 0 5px#f7f3c4,    
+			0 0 10px#f7f3c4,  
+			0 0 20px#f7f3c4,   
+			0 0 40px#f7f3c4,   
+			0 0 80px#f7f3c4,  
+			0 0 90px#f7f3c4 
+		*/
+
+    </style>
+  </head>
+  <body class="bg-secondary text-white flex flex-col h-screen" id="app">
+    <!-- Header -->
+    <header
+      id="header"
+      class="p-3 FirstBreakPoint:p-6 flex justify-center items-center bg-[#28144588] font-StreetSoul z-20 fixed w-full"
+    >
+      <nav
+        class="hidden FirstBreakPoint:flex space-x-20 font-GimbalExtendedRegular text-sm"
+      >
+        <a href="#home" class="text-primary hover:text-[#fff] transition-colors"
+          >Inicio</a
+        >
+        <a
+          href="#about"
+          class="text-primary hover:text-[#fff] transition-colors">Personajes</a
+        >
+        <a
+          href="#services"
+          class="text-primary hover:text-[#fff] transition-colors">Créditos</a
+        >
+        <a
+          href="#contact"
+          class="text-primary hover:text-[#fff] transition-colors">Contacto</a
+        >
+      </nav>
+      <button id="menu-toggle" class="FirstBreakPoint:hidden flex items-center">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Menu móvil -->
+    <nav
+      id="mobile-menu"
+      class="fixed inset-0 p-4 FirstBreakPoint:hidden hidden bg-space z-30 font-GimbalExtendedRegular h-60"
+    >
+      <div class="flex justify-between items-center mb-4">
+        <div class="text-2xl font-bold">
+          <a href="#" class="text-primary text-4xl font-StreetSoul ">Bastardos</a
+          >
+        </div>
+        <button id="menu-close" class="flex items-center">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <ul class="space-y-4">
+        <li>
+          <a href="#home" class="block text-primary border-b-2 border-empty"
+            >Inicio</a
+          >
+        </li>
+        <li>
+          <a href="#about" class="block text-primary border-b-2 border-empty"
+            >Sobre Nosotros</a
+          >
+        </li>
+        <li>
+          <a href="#services" class="block text-primary border-b-2 border-empty"
+            >Servicios</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="block text-primary border-b-2 border-empty"
+            >Contacto</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Contenedor de contenido -->
+    <div class="flex-1 relative z-10">
+      <!-- Sección de contenido -->
+      <section
+        class="w-full flex flex-col justify-center items-center pt-12 relative z-10 bg-secondary h-screen"
+      >
+        <div class="mx-auto text-center flex flex-1 flex-col justify-center">
+          <div class="leading-none mb-4">
+            <h1
+              class="text-primary font-StreetSoul text-8xl SecondBreakPoint:text-title_breakpoint FirstBreakPoint:text-title"
+            >
+              Bastardos
+            </h1>
+            <h2
+              class="text-cuaternary font-GimbalExtendedRegular text-base SecondBreakPoint:text-subtitle_breakpoint FirstBreakPoint:text-subtitle underline underline-offset-4"
+            >
+              Todo por el dinero
+            </h2>
+          </div>
+          <a
+            href="#"
+            class="border border-primary rounded-full font-GimbalExtendedRegular text-xs FirstBreakPoint:text-base hover:text-[#f0f0f079] transition-colors px-5 mx-auto"
+            >Ver trailer</a
+          >
+        </div>
+        <div class="mouse_scroll">
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
+          <div>
+            <span class="m_scroll_arrows unu"></span>
+            <span class="m_scroll_arrows doi"></span>
+            <span class="m_scroll_arrows trei"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-black">
+        <img src="/assets/Trazo.png" alt="Trazo" class="w-full"/>
+        <div class="flex flex-col justify-center max-w-7xl mx-auto my-20">
+          <div class="ml-5 mr-5 text-center fade-in">
+			<h1 class="font-StreetSoul text-5xl FirstBreakPoint:text-7xl text-cuaternary neon_yellow">
+				Serie dramática rodada en Madrid.
+			  </h1>
+			<img
+			src="/assets/trazoblanco.png"
+			class="mx-auto"
+			style="filter:brightness(1)"
+		  />
+            <p class="font-SteelFish text-2xl FirstBreakPoint:text-4xl">
+              Bastardos es una serie dramática producida en Madrid, centrada en
+              temas serios y profundos. Explora la complejidad de la vida y las
+              decisiones humanas a través de una narrativa intensa y
+              conmovedora. Su enfoque en la realidad y el drama ofrece una
+              experiencia cinematográfica única, reflejando las luchas y
+              conflictos internos de los personajes con una autenticidad
+              impresionante.
+            </p>
+          </div>
+        </div>
+        <img
+          src="/assets/Trazo.png"
+          alt="Trazo"
+          style="transform: scaleX(-1) scaleY(-1);"
+          class="w-full"
+        />
+      </section>
+      <div class="flex flex-col justify-center max-w-8xl mx-auto mt-9">
+        <div class="ml-5 mr-5 text-center">
+          <h1
+            class="font-GimbalExtendedRegular text-2xl sm:text-3xl FirstBreakPoint:text-6xl text-primary"
+          >
+            Imagenes Destacadas
+          </h1>
+        </div>
+      </div>
+
+      <script>
+        // Script para el menú móvil
+        document
+          .getElementById("menu-toggle")
+          .addEventListener("click", function () {
+            document.getElementById("mobile-menu").classList.toggle("hidden");
+          });
+
+        document
+          .getElementById("menu-close")
+          .addEventListener("click", function () {
+            document.getElementById("mobile-menu").classList.add("hidden");
+          });
+
+        // Script para difuminar el fondo al hacer scroll
+        // Script para difuminar el fondo al hacer scroll
+        let hasScrolled = false;
+        window.addEventListener("scroll", function () {
+          // Mostrar o ocultar la cabecera cuando se hace scroll
+          if (!hasScrolled) {
+            document.getElementById("header").classList.add("blur-background");
+            hasScrolled = true;
+          }
+
+          // Ocultar el botón de desplazamiento del mouse permanentemente
+          const scrollButton = document.querySelector(".mouse_scroll");
+          if (window.scrollY > 50) {
+            // Si se ha desplazado más de 50px
+            scrollButton.classList.add("hidden"); // Se oculta y ya no vuelve a aparecer
+          }
+        });
+
+		document.addEventListener("DOMContentLoaded", function () {
+		const fadeInSection = document.querySelector('.fade-in'); // Selecciona el texto a aplicar el fade-in
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				fadeInSection.classList.add('visible'); // Añade la clase visible cuando entra en el viewport
+			}
+			});
+		});
+
+		observer.observe(fadeInSection); // Observa el texto para la animación
+		});
+      </script>
+
+      <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
+    </div>
+  </body>
+</html>
