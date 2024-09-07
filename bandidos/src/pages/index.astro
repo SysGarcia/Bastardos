@@ -283,41 +283,41 @@
         }
       }
 
-	  #app::after {
-		content: "";
-		position: fixed;
-		z-index: 9999;
-		top: -300%;
-		left: -150%;
-		height: 700%;
-		width: 700%;
-		background-image: url(/assets/noisy.png);
-		background-size: 200px;
-		background-repeat: repeat;
-		opacity: 0.25;
-		pointer-events: none;
-		animation: noise 7s steps(10) infinite;
-		}
-		
-		.fade-in {
-			opacity: 0; /* Comienza siendo invisible */
-			transition: opacity 2s ease-in-out; /* La transición dura 2 segundos */
-			}
+      #app::after {
+        content: "";
+        position: fixed;
+        z-index: 9999;
+        top: -300%;
+        left: -150%;
+        height: 700%;
+        width: 700%;
+        background-image: url(/assets/noisy.png);
+        background-size: 200px;
+        background-repeat: repeat;
+        opacity: 0.25;
+        pointer-events: none;
+        animation: noise 7s steps(10) infinite;
+      }
 
-			.visible {
-			opacity: 1; /* Cuando es visible, tendrá opacidad 1 (totalmente visible) */
-			}
+      .fade-in {
+        opacity: 0; /* Comienza siendo invisible */
+        transition: opacity 2s ease-in-out; /* La transición dura 2 segundos */
+      }
 
-		.neon_yellow{
-			text-shadow:
-			0 0 5px #fff000,   
-			0 0 10px #fff000,   
-			0 0 20px #fff000,   
-			0 0 40px #ffcc00,   
-			0 0 80px #ffcc00,   
-			0 0 90px #ffcc00;   
-		}
-		/*
+      .visible {
+        opacity: 1; /* Cuando es visible, tendrá opacidad 1 (totalmente visible) */
+      }
+
+      .neon_yellow {
+        text-shadow:
+          0 0 5px #fff000,
+          0 0 10px #fff000,
+          0 0 20px #fff000,
+          0 0 40px #ffcc00,
+          0 0 80px #ffcc00,
+          0 0 90px #ffcc00;
+      }
+      /*
 
 
 			0 0 5px#f7f3c4,    
@@ -327,7 +327,6 @@
 			0 0 80px#f7f3c4,  
 			0 0 90px#f7f3c4 
 		*/
-
     </style>
   </head>
   <body class="bg-secondary text-white flex flex-col h-screen" id="app">
@@ -379,7 +378,7 @@
     >
       <div class="flex justify-between items-center mb-4">
         <div class="text-2xl font-bold">
-          <a href="#" class="text-primary text-4xl font-StreetSoul ">Bastardos</a
+          <a href="#" class="text-primary text-4xl font-StreetSoul">Bastardos</a
           >
         </div>
         <button id="menu-close" class="flex items-center">
@@ -406,12 +405,12 @@
         </li>
         <li>
           <a href="#about" class="block text-primary border-b-2 border-empty"
-            >Sobre Nosotros</a
+            >Personajes</a
           >
         </li>
         <li>
           <a href="#services" class="block text-primary border-b-2 border-empty"
-            >Servicios</a
+            >Créditos</a
           >
         </li>
         <li>
@@ -460,17 +459,19 @@
       </section>
 
       <section class="bg-black">
-        <img src="/assets/Trazo.png" alt="Trazo" class="w-full"/>
-        <div class="flex flex-col justify-center max-w-7xl mx-auto my-20">
-          <div class="ml-5 mr-5 text-center fade-in">
-			<h1 class="font-StreetSoul text-5xl FirstBreakPoint:text-7xl text-cuaternary neon_yellow">
-				Serie dramática rodada en Madrid.
-			  </h1>
-			<img
-			src="/assets/trazoblanco.png"
-			class="mx-auto"
-			style="filter:brightness(1)"
-		  />
+        <img src="/assets/Trazo.png" alt="Trazo" class="w-full" />
+        <div class="flex flex-col justify-center max-w-7xl mx-auto my-32">
+          <div class="ml-5 mr-5 text-center fade-in flex flex-col gap-y-8">
+            <h1
+              class="font-StreetSoul text-5xl FirstBreakPoint:text-7xl text-cuaternary neon_yellow"
+            >
+              Serie dramática rodada en Madrid.
+            </h1>
+            <img
+              src="/assets/trazoblanco.png"
+              class="mx-auto"
+              style="filter:brightness(1)"
+            />
             <p class="font-SteelFish text-2xl FirstBreakPoint:text-4xl">
               Bastardos es una serie dramática producida en Madrid, centrada en
               temas serios y profundos. Explora la complejidad de la vida y las
@@ -531,18 +532,18 @@
           }
         });
 
-		document.addEventListener("DOMContentLoaded", function () {
-		const fadeInSection = document.querySelector('.fade-in'); // Selecciona el texto a aplicar el fade-in
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				fadeInSection.classList.add('visible'); // Añade la clase visible cuando entra en el viewport
-			}
-			});
-		});
+        document.addEventListener("DOMContentLoaded", function () {
+          const fadeInSection = document.querySelector(".fade-in"); // Selecciona el texto a aplicar el fade-in
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                fadeInSection.classList.add("visible"); // Añade la clase visible cuando entra en el viewport
+              }
+            });
+          });
 
-		observer.observe(fadeInSection); // Observa el texto para la animación
-		});
+          observer.observe(fadeInSection); // Observa el texto para la animación
+        });
       </script>
 
       <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
