@@ -1,36 +1,5 @@
 ---
 import NoiseBackground from '../components/NoiseBackground.astro';
-
-const items = [
-  {
-    title: 'Item 1',
-    img: '/assets/atraco.webp'
-  },
-  {
-    title: 'Item 2',
-    img: '/assets/atraco.webp'
-  },
-  {
-    title: 'Item 3',
-    img: '/assets/atraco.webp'
-  },
-  {
-    title: 'Item 4',
-    img: '/assets/atraco.webp'
-  },
-  {
-    title: 'Item 5',
-    img: '/assets/atraco.webp'
-  },
-  {
-    title: 'Item 6',
-    img: '/assets/atraco.webp'
-  },
-  {
-    title: 'Item 7',
-    img: '/assets/atraco.webp'
-  }
-];
 ---
 
 <!doctype html>
@@ -333,12 +302,12 @@ const items = [
   <body class="bg-secondary text-white flex flex-col h-screen">
     <NoiseBackground />
     <!-- Header -->
-    <header id="header" class="p-3 FirstBreakPoint:p-6 flex justify-center items-center bg-[#28144588] font-StreetSoul z-20 fixed w-full">
+    <header id="header" class="p-3 FirstBreakPoint:p-6 flex justify-center items-center bg-[#28144588] font-StreetSoul z-20 fixed w-svw">
       <nav class="hidden FirstBreakPoint:flex space-x-20 font-GimbalExtendedRegular text-sm">
-        <a href="#home" class="text-primary hover:text-[#fff] transition-colors">Inicio</a>
-        <a href="#about" class="text-primary hover:text-[#fff] transition-colors">Personajes</a>
-        <a href="#services" class="text-primary hover:text-[#fff] transition-colors">Créditos</a>
-        <a href="#contact" class="text-primary hover:text-[#fff] transition-colors">Contacto</a>
+        <a href="#home" class="text-primary hover:text-[#fff] transition-colors">inicio</a>
+        <a href="#about" class="text-primary hover:text-[#fff] transition-colors">personajes</a>
+        <a href="#services" class="text-primary hover:text-[#fff] transition-colors">créditos</a>
+        <a href="#contact" class="text-primary hover:text-[#fff] transition-colors">contacto</a>
       </nav>
       <button id="menu-toggle" class="FirstBreakPoint:hidden flex items-center">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -348,7 +317,7 @@ const items = [
     </header>
 
     <!-- Menu móvil -->
-    <nav id="mobile-menu" class="fixed inset-0 p-4 FirstBreakPoint:hidden hidden bg-space z-30 font-GimbalExtendedRegular h-60">
+    <nav id="mobile-menu" class="fixed inset-0 p-4 FirstBreakPoint:hidden hidden bg-space z-30 font-GimbalExtendedRegular h-60 w-svw">
       <div class="flex justify-between items-center mb-4">
         <div class="text-2xl font-bold">
           <a href="#" class="text-primary text-4xl font-StreetSoul">Bastardos</a>
@@ -361,16 +330,16 @@ const items = [
       </div>
       <ul class="space-y-4">
         <li>
-          <a href="#home" class="block text-primary border-b-2 border-empty">Inicio</a>
+          <a href="#home" class="block text-primary border-b-2 border-empty">inicio</a>
         </li>
         <li>
-          <a href="#about" class="block text-primary border-b-2 border-empty">Personajes</a>
+          <a href="#about" class="block text-primary border-b-2 border-empty">personajes</a>
         </li>
         <li>
-          <a href="#services" class="block text-primary border-b-2 border-empty">Créditos</a>
+          <a href="#services" class="block text-primary border-b-2 border-empty">créditos</a>
         </li>
         <li>
-          <a href="#contact" class="block text-primary border-b-2 border-empty">Contacto</a>
+          <a href="#contact" class="block text-primary border-b-2 border-empty">contacto</a>
         </li>
       </ul>
     </nav>
@@ -404,7 +373,7 @@ const items = [
           <div class="ml-5 mr-5 text-center fade-in flex flex-col gap-y-8">
             <h1 class="font-StreetSoul text-5xl sm:text-6xl FirstBreakPoint:text-8xl text-empty neon_yellow">Serie dramatica rodada en Madrid.</h1>
             <img src="/assets/trazoblanco.png" class="mx-auto" style="filter:brightness(1)" />
-            <p class="font-SteelFish text-2xl FirstBreakPoint:text-4xl">Bastardos es una serie dramática producida en Madrid, centrada en temas serios y profundos. Explora la complejidad de la vida y las decisiones humanas a través de una narrativa intensa y conmovedora. Su enfoque en la realidad y el drama ofrece una experiencia cinematográfica única, reflejando las luchas y conflictos internos de los personajes con una autenticidad impresionante.</p>
+            <p class="text-2xl FirstBreakPoint:text-4xl" style="font-family: 'Times New Roman', Times, serif;">Bastardos es una serie dramática producida en Madrid, centrada en temas serios y profundos. Explora la complejidad de la vida y las decisiones humanas a través de una narrativa intensa y conmovedora. Su enfoque en la realidad y el drama ofrece una experiencia cinematográfica única, reflejando las luchas y conflictos internos de los personajes con una autenticidad impresionante.</p>
           </div>
         </div>
         <img src="/assets/Trazo.png" alt="Trazo" style="transform: scaleX(-1) scaleY(-1);" class="max-w-[300%] FirstBreakPoint:w-full" />
@@ -415,50 +384,51 @@ const items = [
 
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="grid gap-4">
-              <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" alt="" />
+              <div class="h-full">
+                <img class="w-full h-full object-cover rounded-lg" src="/assets/periodico.png" alt="" />
               </div>
-              <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="" />
+              <div class="h-full">
+                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="" />
               </div>
-              <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="" />
-              </div>
-            </div>
-            <div class="grid gap-4">
-              <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="" />
-              </div>
-              <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="" />
-              </div>
-              <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="" />
+              <div class="h-full">
+                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="" />
               </div>
             </div>
             <div class="grid gap-4">
-              <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="" />
+              <div class="h-full">
+                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="" />
               </div>
-              <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="" />
+              <div class="h-full">
+                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="" />
               </div>
-              <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="" />
+              <div class="h-full">
+                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="" />
               </div>
             </div>
             <div class="grid gap-4">
-              <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="" />
+              <div class="h-full">
+                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="" />
               </div>
-              <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="" />
+              <div class="h-full">
+                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="" />
               </div>
-              <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="" />
+              <div class="h-full">
+                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="" />
+              </div>
+            </div>
+            <div class="grid gap-4">
+              <div class="h-full">
+                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="" />
+              </div>
+              <div class="h-full">
+                <img class="w-full h-full object-cover rounded-lg" src="/assets/high_res.png" alt="" />
+              </div>
+              <div class="h-full">
+                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="" />
               </div>
             </div>
           </div>
+          
         </div>
       </div>
 
