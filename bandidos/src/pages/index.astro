@@ -76,6 +76,15 @@ const items = [
           visibility 0.3s ease;
       }
 
+      .fade-in-scroll {
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
+      }
+
+      .fade-in-scroll.visible {
+        opacity: 1;
+      }
+
       .mouse_scroll {
         display: block;
         margin: 0 auto;
@@ -463,23 +472,31 @@ const items = [
           document.getElementById('mobile-menu').classList.add('hidden');
         });
 
-        // Script para difuminar el fondo al hacer scroll
-        // Script para difuminar el fondo al hacer scroll
+
         let hasScrolled = false;
         window.addEventListener('scroll', function () {
-          // Mostrar o ocultar la cabecera cuando se hace scroll
+
           if (!hasScrolled) {
             document.getElementById('header').classList.add('blur-background');
             hasScrolled = true;
           }
 
-          // Ocultar el botón de desplazamiento del mouse permanentemente
           const scrollButton = document.querySelector('.mouse_scroll');
+          
           if (window.scrollY > 50) {
-            // Si se ha desplazado más de 50px
-            scrollButton.classList.add('hidden'); // Se oculta y ya no vuelve a aparecer
+            scrollButton.classList.add('hidden'); 
+            scrollButton.classList.remove('fade-in-scroll', 'visible'); 
+          } else {
+            setTimeout(() => {
+              scrollButton.classList.remove('hidden'); 
+              scrollButton.classList.add('fade-in-scroll'); 
+              setTimeout(() => {
+                scrollButton.classList.add('visible'); 
+              }, 100); 
+            }, 5000); 
           }
         });
+
 
         document.addEventListener('DOMContentLoaded', function () {
           const fadeInSection = document.querySelector('.fade-in'); // Selecciona el texto a aplicar el fade-in
