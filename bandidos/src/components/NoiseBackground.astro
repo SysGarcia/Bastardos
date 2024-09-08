@@ -1,0 +1,56 @@
+<style>
+  @keyframes noise {
+    0%,
+    100% {
+      transform: translate(0);
+    }
+    10% {
+      transform: translate(-5%, -5%);
+    }
+    20% {
+      transform: translate(-15%, 5%);
+    }
+    30% {
+      transform: translate(7%, -25%);
+    }
+    40% {
+      transform: translate(-5%, 25%);
+    }
+    50% {
+      transform: translate(-15%, 10%);
+    }
+    60% {
+      transform: translate(15%, -5%);
+    }
+    70% {
+      transform: translate(5%, 15%);
+    }
+    80% {
+      transform: translate(3%, 35%);
+    }
+    90% {
+      transform: translate(-10%, 10%);
+    }
+  }
+
+  #noise-background::after {
+    will-change: transform;
+}
+
+  #noise-background::after {
+    content: '';
+    position: fixed;
+    z-index: 9999;
+    top: -300%;
+    left: -150%;
+    height: 700%;
+    width: 700%;
+    background-image: url(/assets/noisy.png);
+    background-size: 200px;
+    background-repeat: repeat;
+    opacity: 0.25;
+    pointer-events: none;
+    animation: noise 7s steps(10) infinite;
+  }
+</style>
+<div id="noise-background"></div>
