@@ -1,0 +1,156 @@
+---
+import NoiseBackground from '../components/NoiseBackground.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto 🎨</title>
+    <style>
+      @font-face {
+        font-family: 'StreetSoul';
+        src: url('../fonts/StreetSoul.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'GimbalExtendedRegular';
+        src: url('../fonts/GimbalExtendedRegular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'SteelFish';
+        src: url('../fonts/steelfish.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      /* Efecto de desenfoque */
+      .blur-background {
+        backdrop-filter: blur(5px);
+        transition: filter 0.3s ease;
+      }
+
+      /* Flexbox para centrar verticalmente */
+      .main-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 60px); /* Ajustar según el alto del header */
+        padding: 1rem;
+      }
+    </style>
+  </head>
+
+  <body class="bg-secondary text-white flex flex-col h-screen">
+    <NoiseBackground />
+    <!-- Header -->
+    <header id="header" class="p-3 FirstBreakPoint:p-6 flex justify-center items-center bg-[#28144588] font-StreetSoul z-20 fixed w-svw">
+      <nav class="hidden FirstBreakPoint:flex space-x-20 font-GimbalExtendedRegular text-sm">
+        <a href="/" class="text-primary hover:text-[#fff] transition-colors">inicio</a>
+        <a href="#about" class="text-primary hover:text-[#fff] transition-colors">personajes</a>
+        <a href="#services" class="text-primary hover:text-[#fff] transition-colors">créditos</a>
+        <a href="/contacto" class="text-primary hover:text-[#fff] transition-colors">contacto</a>
+      </nav>
+      <button id="menu-toggle" class="FirstBreakPoint:hidden flex items-center">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Menu móvil -->
+    <nav id="mobile-menu" class="fixed inset-0 p-4 FirstBreakPoint:hidden hidden bg-space z-30 font-GimbalExtendedRegular h-60 w-svw">
+      <div class="flex justify-between items-center mb-4">
+        <div class="text-2xl font-bold">
+          <a href="/" class="text-primary text-4xl font-StreetSoul">Bastardos</a>
+        </div>
+        <button id="menu-close" class="flex items-center">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <ul class="space-y-4">
+        <li>
+          <a href="/" class="block text-primary border-b-2 border-empty">inicio</a>
+        </li>
+        <li>
+          <a href="#about" class="block text-primary border-b-2 border-empty">personajes</a>
+        </li>
+        <li>
+          <a href="#services" class="block text-primary border-b-2 border-empty">créditos</a>
+        </li>
+        <li>
+          <a href="/contacto" class="block text-primary border-b-2 border-empty">contacto</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="pt-20 mx-3">
+      <div class="grid md:grid-cols-2 items-center overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-3xl max-w-6xl mx-auto bg-white mt-6 md:mt-20 mb-6 font-sans">
+        <div class="p-8 bg-[#131313]">
+          <h2 class="text-3xl font-bold text-white">Ponte en contacto con <span class="text-cuaternary">Nosotros</span></h2>
+          <p class="text-sm text-gray-300 mt-4 leading-relaxed">¿Tienes algo en mente? ¡No dudes en contactar con nostros!</p>
+
+          <form>
+            <div class="space-y-4 mt-8">
+              <input type="text" placeholder="Nombre Completo" class="px-2 py-3 bg-transparent text-gray-300 w-full text-sm border-b border-gray-400 focus:border-cuaternary outline-none" />
+              <input type="text" placeholder="Ciudad" class="px-2 py-3 bg-transparent text-gray-300 w-full text-sm border-b border-gray-400 focus:border-cuaternary outline-none" />
+              <input type="number" placeholder="Número Teléfono" class="px-2 py-3 bg-transparent text-gray-300 w-full text-sm border-b border-gray-400 focus:border-cuaternary outline-none" />
+              <input type="email" placeholder="Correo Electrónico" class="px-2 py-3 bg-transparent text-gray-300 w-full text-sm border-b border-gray-400 focus:border-cuaternary outline-none" />
+              <textarea placeholder="Escribe tu mensaje!" class="px-2 pt-3 bg-transparent text-gray-300 w-full text-sm border-b border-gray-400 focus:border-cuaternary outline-none"></textarea>
+            </div>
+
+            <button type="button" class="mt-8 flex items-center justify-center text-sm w-full rounded-md px-6 py-3 tracking-wide text-gray-800 bg-cuaternary hover:bg-[#2b8d35] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="currentColor" class="mr-2" viewBox="0 0 548.244 548.244">
+                <path fill-rule="evenodd" d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z" clip-rule="evenodd" data-original="#000000"></path>
+              </svg>
+              Enviar Mensaje
+            </button>
+          </form>
+
+          <ul class="mt-4 flex flex-wrap justify-center gap-4 lg:space-x-6 max-lg:flex-col max-lg:items-center max-lg:space-y-2">
+            <li class="flex items-center text-cuaternary">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="mr-2 w-5 h-5">
+                <path fill-rule="evenodd" d="M3.67 4A2.67 2.67 0 001 6.67v10.66A2.67 2.67 0 003.67 20h16.66A2.67 2.67 0 0023 17.33V6.67A2.67 2.67 0 0020.33 4H3.67zm8.33 11.67a.5.5 0 01-.5-.5v-1.11a3.82 3.82 0 002.35-1.15c.47-.48.85-1.04 1.11-1.65a3.61 3.61 0 00-1.11-4.39c-.57-.45-1.28-.68-2-.68s-1.42.23-2 .68a3.61 3.61 0 00-1.11 4.39 4.19 4.19 0 002.36 1.15v1.11a.5.5 0 01-.5.5zm0-9.34a2.5 2.5 0 100 5 2.5 2.5 0 000-5z" clip-rule="evenodd"></path>
+              </svg>
+              Fuenlabrada, Loranca
+            </li>
+            <li class="flex items-center text-cuaternary">
+              <a href="mailto:Bastardos.series@gmail.com">Bastardos.series@gmail.com</a>
+
+            </li>
+          </ul>
+        </div>
+        <div class="z-10 relative h-full max-md:min-h-[350px]">
+          <iframe 
+              src="https://maps.google.com/maps?q=40.299944,-3.837833&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              class="left-0 top-0 h-full w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
+              allowfullscreen>
+          </iframe>
+      </div>
+      
+      </div>
+      
+    </main>
+    <script>
+      // Script para el menú móvil
+      document.getElementById('menu-toggle').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+      });
+
+      document.getElementById('menu-close').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    </script>
+
+    <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
+  </body>
+</html>

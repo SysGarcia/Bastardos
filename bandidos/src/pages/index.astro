@@ -273,12 +273,12 @@ import NoiseBackground from '../components/NoiseBackground.astro';
 
       .neon_yellow {
         text-shadow:
-        0 0 5px #4edd56,
-        0 0 10px #4edd56,
-        0 0 20px #4edd56,
-        0 0 40px #3ac441,
-        0 0 80px #3ac441,
-        0 0 90px #3ac441;
+          0 0 5px #4edd56,
+          0 0 10px #4edd56,
+          0 0 20px #4edd56,
+          0 0 40px #3ac441,
+          0 0 80px #3ac441,
+          0 0 90px #3ac441;
       }
       /*
 
@@ -304,10 +304,10 @@ import NoiseBackground from '../components/NoiseBackground.astro';
     <!-- Header -->
     <header id="header" class="p-3 FirstBreakPoint:p-6 flex justify-center items-center bg-[#28144588] font-StreetSoul z-20 fixed w-svw">
       <nav class="hidden FirstBreakPoint:flex space-x-20 font-GimbalExtendedRegular text-sm">
-        <a href="#home" class="text-primary hover:text-[#fff] transition-colors">inicio</a>
+        <a href="/" class="text-primary hover:text-[#fff] transition-colors">inicio</a>
         <a href="#about" class="text-primary hover:text-[#fff] transition-colors">personajes</a>
         <a href="#services" class="text-primary hover:text-[#fff] transition-colors">créditos</a>
-        <a href="#contact" class="text-primary hover:text-[#fff] transition-colors">contacto</a>
+        <a href="/contacto" class="text-primary hover:text-[#fff] transition-colors">contacto</a>
       </nav>
       <button id="menu-toggle" class="FirstBreakPoint:hidden flex items-center">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -320,7 +320,7 @@ import NoiseBackground from '../components/NoiseBackground.astro';
     <nav id="mobile-menu" class="fixed inset-0 p-4 FirstBreakPoint:hidden hidden bg-space z-30 font-GimbalExtendedRegular h-60 w-svw">
       <div class="flex justify-between items-center mb-4">
         <div class="text-2xl font-bold">
-          <a href="#" class="text-primary text-4xl font-StreetSoul">Bastardos</a>
+          <a href="/" class="text-primary text-4xl font-StreetSoul">Bastardos</a>
         </div>
         <button id="menu-close" class="flex items-center">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -330,7 +330,7 @@ import NoiseBackground from '../components/NoiseBackground.astro';
       </div>
       <ul class="space-y-4">
         <li>
-          <a href="#home" class="block text-primary border-b-2 border-empty">inicio</a>
+          <a href="/" class="block text-primary border-b-2 border-empty">inicio</a>
         </li>
         <li>
           <a href="#about" class="block text-primary border-b-2 border-empty">personajes</a>
@@ -339,7 +339,7 @@ import NoiseBackground from '../components/NoiseBackground.astro';
           <a href="#services" class="block text-primary border-b-2 border-empty">créditos</a>
         </li>
         <li>
-          <a href="#contact" class="block text-primary border-b-2 border-empty">contacto</a>
+          <a href="/contacto" class="block text-primary border-b-2 border-empty">contacto</a>
         </li>
       </ul>
     </nav>
@@ -368,27 +368,24 @@ import NoiseBackground from '../components/NoiseBackground.astro';
       </section>
 
       <section class="bg-black">
-              <!-- Contenedor para la primera imagen -->
-      <div class="relative overflow-hidden w-full">
-        <img src="/assets/Trazo.png" alt="Trazo" class="max-w-[300%] FirstBreakPoint:w-full"/>
-      </div>
-
-      <!-- Contenedor principal -->
-      <div class="flex flex-col justify-center max-w-7xl mx-auto my-32">
-        <div class="ml-5 mr-5 text-center fade-in flex flex-col gap-y-8">
-          <h1 class="font-StreetSoul text-5xl sm:text-6xl FirstBreakPoint:text-8xl text-empty neon_yellow">Serie dramatica rodada en Madrid.</h1>
-          <img src="/assets/trazoblanco.png" class="mx-auto" style="filter:brightness(1)" />
-          <p class="text-2xl FirstBreakPoint:text-4xl" style="font-family: 'Times New Roman', Times, serif;">
-            Bastardos es una serie dramática producida en Madrid, centrada en temas serios y profundos. Explora la complejidad de la vida y las decisiones humanas a través de una narrativa intensa y conmovedora. Su enfoque en la realidad y el drama ofrece una experiencia cinematográfica única, reflejando las luchas y conflictos internos de los personajes con una autenticidad impresionante.
-          </p>
+        <!-- Contenedor para la primera imagen -->
+        <div class="relative overflow-hidden w-full">
+          <img src="/assets/Trazo.png" alt="Trazo" class="max-w-[300%] FirstBreakPoint:w-full" />
         </div>
-      </div>
 
-      <!-- Contenedor para la segunda imagen -->
-      <div class="relative overflow-hidden w-full">
-        <img src="/assets/Trazo.png" alt="Trazo" style="transform: scaleX(-1) scaleY(-1);" class="max-w-[300%] FirstBreakPoint:w-full"/>
-      </div>
+        <!-- Contenedor principal -->
+        <div class="flex flex-col justify-center max-w-7xl mx-auto my-32">
+          <div class="ml-5 mr-5 text-center fade-in flex flex-col gap-y-8">
+            <h1 class="font-StreetSoul text-5xl sm:text-6xl FirstBreakPoint:text-8xl text-empty neon_yellow">Serie dramatica rodada en Madrid.</h1>
+            <img src="/assets/trazoblanco.png" class="mx-auto" style="filter:brightness(1)" />
+            <p class="text-2xl FirstBreakPoint:text-4xl" style="font-family: 'Times New Roman', Times, serif;">Bastardos es una serie dramática producida en Madrid, centrada en temas serios y profundos. Explora la complejidad de la vida y las decisiones humanas a través de una narrativa intensa y conmovedora. Su enfoque en la realidad y el drama ofrece una experiencia cinematográfica única, reflejando las luchas y conflictos internos de los personajes con una autenticidad impresionante.</p>
+          </div>
+        </div>
 
+        <!-- Contenedor para la segunda imagen -->
+        <div class="relative overflow-hidden w-full">
+          <img src="/assets/Trazo.png" alt="Trazo" style="transform: scaleX(-1) scaleY(-1);" class="max-w-[300%] FirstBreakPoint:w-full" />
+        </div>
       </section>
       <div class="flex flex-col justify-center max-w-8xl mx-auto mt-9">
         <div class="ml-5 mr-5 text-center">
@@ -440,7 +437,6 @@ import NoiseBackground from '../components/NoiseBackground.astro';
               </div>
             </div>
           </div>
-          
         </div>
       </div>
 
@@ -454,31 +450,28 @@ import NoiseBackground from '../components/NoiseBackground.astro';
           document.getElementById('mobile-menu').classList.add('hidden');
         });
 
-
         let hasScrolled = false;
         window.addEventListener('scroll', function () {
-
           if (!hasScrolled) {
             document.getElementById('header').classList.add('blur-background');
             hasScrolled = true;
           }
 
           const scrollButton = document.querySelector('.mouse_scroll');
-          
+
           if (window.scrollY > 50) {
-            scrollButton.classList.add('hidden'); 
-            scrollButton.classList.remove('fade-in-scroll', 'visible'); 
+            scrollButton.classList.add('hidden');
+            scrollButton.classList.remove('fade-in-scroll', 'visible');
           } else {
             setTimeout(() => {
-              scrollButton.classList.remove('hidden'); 
-              scrollButton.classList.add('fade-in-scroll'); 
+              scrollButton.classList.remove('hidden');
+              scrollButton.classList.add('fade-in-scroll');
               setTimeout(() => {
-                scrollButton.classList.add('visible'); 
-              }, 100); 
-            }, 5000); 
+                scrollButton.classList.add('visible');
+              }, 100);
+            }, 5000);
           }
         });
-
 
         document.addEventListener('DOMContentLoaded', function () {
           const fadeInSection = document.querySelector('.fade-in'); // Selecciona el texto a aplicar el fade-in
