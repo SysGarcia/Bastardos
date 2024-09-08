@@ -271,7 +271,7 @@ import NoiseBackground from '../components/NoiseBackground.astro';
         opacity: 1; /* Cuando es visible, tendrá opacidad 1 (totalmente visible) */
       }
 
-      .neon_yellow {
+      .neon_green {
         text-shadow:
           0 0 5px #4edd56,
           0 0 10px #4edd56,
@@ -280,8 +280,17 @@ import NoiseBackground from '../components/NoiseBackground.astro';
           0 0 80px #3ac441,
           0 0 90px #3ac441;
       }
-      /*
 
+      .neon_magenta {
+        text-shadow:
+          0 0 5px #c934b5,
+          0 0 10px #c934b5,
+          0 0 20px #c934b5,
+          0 0 40px #a0178e,
+          0 0 80px #a0178e,
+          0 0 90px #a0178e;
+      }
+      /*
 
 			0 0 5px#f7f3c4,    
 			0 0 10px#f7f3c4,  
@@ -350,10 +359,10 @@ import NoiseBackground from '../components/NoiseBackground.astro';
       <section class="w-full flex flex-col justify-center items-center pt-12 relative z-10 bg-secondary h-svh">
         <div class="mx-auto text-center flex flex-1 flex-col justify-center">
           <div class="leading-none mb-4">
-            <h1 class="text-primary font-StreetSoul text-8xl SecondBreakPoint:text-title_breakpoint FirstBreakPoint:text-title">Bastardos</h1>
-            <h2 class="text-cuaternary font-GimbalExtendedRegular text-base SecondBreakPoint:text-subtitle_breakpoint FirstBreakPoint:text-subtitle underline underline-offset-4">Todo por el dinero</h2>
+            <h1 class="text-primary font-StreetSoul text-8xl SecondBreakPoint:text-title_breakpoint FirstBreakPoint:text-title neon_magenta">Bastardos</h1>
+            <h2 class="text-[#fff] font-GimbalExtendedRegular text-base SecondBreakPoint:text-subtitle_breakpoint FirstBreakPoint:text-subtitle underline underline-offset-4">todo por el dinero</h2>
           </div>
-          <a href="#" class="border border-primary rounded-full font-GimbalExtendedRegular text-xs FirstBreakPoint:text-base hover:text-[#f0f0f079] transition-colors px-5 mx-auto">Ver trailer</a>
+          <a href="#" class="border border-primary rounded-full font-GimbalExtendedRegular text-xs FirstBreakPoint:text-base hover:text-[#f0f0f079] transition-colors px-5 mx-auto mt-1 sm:mt-5 ">ver trailer</a>
         </div>
         <div class="mouse_scroll">
           <div class="mouse">
@@ -376,7 +385,7 @@ import NoiseBackground from '../components/NoiseBackground.astro';
         <!-- Contenedor principal -->
         <div class="flex flex-col justify-center max-w-7xl mx-auto my-32">
           <div class="ml-5 mr-5 text-center fade-in flex flex-col gap-y-8">
-            <h1 class="font-StreetSoul text-5xl sm:text-6xl FirstBreakPoint:text-8xl text-empty neon_yellow">Serie dramatica rodada en Madrid.</h1>
+            <h1 class="font-StreetSoul text-5xl sm:text-6xl FirstBreakPoint:text-8xl text-empty neon_green">Serie dramatica rodada en Madrid.</h1>
             <img src="/assets/trazoblanco.png" class="mx-auto" style="filter:brightness(1)" />
             <p class="text-2xl FirstBreakPoint:text-4xl" style="font-family: 'Times New Roman', Times, serif;">Bastardos es una serie dramática producida en Madrid, centrada en temas serios y profundos. Explora la complejidad de la vida y las decisiones humanas a través de una narrativa intensa y conmovedora. Su enfoque en la realidad y el drama ofrece una experiencia cinematográfica única, reflejando las luchas y conflictos internos de los personajes con una autenticidad impresionante.</p>
           </div>
@@ -389,54 +398,55 @@ import NoiseBackground from '../components/NoiseBackground.astro';
       </section>
       <div class="flex flex-col justify-center max-w-8xl mx-auto mt-9">
         <div class="ml-5 mr-5 text-center">
-          <h1 class="font-GimbalExtendedRegular text-2xl sm:text-3xl FirstBreakPoint:text-6xl text-primary mb-6">Imagenes Destacadas</h1>
+          <h1 class="font-GimbalExtendedRegular text-2xl sm:text-3xl FirstBreakPoint:text-6xl text-primary mb-6">imagenes destacadas</h1>
 
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="grid gap-4">
-              <div class="h-full">
-                <img class="w-full h-full object-cover rounded-lg" src="/assets/periodico.png" alt="" />
+              <div class="h-full overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="/assets/escape.jpeg" alt="" />
               </div>
-              <div class="h-full">
-                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="" />
+              <div class="h-full overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="" />
               </div>
-              <div class="h-full">
-                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="" />
-              </div>
-            </div>
-            <div class="grid gap-4">
-              <div class="h-full">
-                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="" />
-              </div>
-              <div class="h-full">
-                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="" />
-              </div>
-              <div class="h-full">
-                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="" />
+              <div class="h-full overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="" />
               </div>
             </div>
             <div class="grid gap-4">
-              <div class="h-full">
-                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="" />
+              <div class="h-full overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="/assets/escape.jpeg" alt="" />
               </div>
-              <div class="h-full">
-                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="" />
+              <div class="h-full overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="" />
               </div>
-              <div class="h-full">
-                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="" />
+              <div class="h-full overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="" />
               </div>
             </div>
             <div class="grid gap-4">
-              <div class="h-full">
-                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="" />
+              <div class="h-full overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="" />
               </div>
-              <div class="h-full">
-                <img class="w-full h-full object-cover rounded-lg" src="/assets/high_res.png" alt="" />
+              <div class="h-full overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="" />
               </div>
-              <div class="h-full">
-                <img class="w-full h-full object-cover rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="" />
+              <div class="h-full overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="" />
+              </div>
+            </div>
+            <div class="grid gap-4">
+              <div class="h-full overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="" />
+              </div>
+              <div class="h-full overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="/assets/escape.jpeg" alt="" />
+              </div>
+              <div class="h-full overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="" />
               </div>
             </div>
           </div>
+          
         </div>
       </div>
 
