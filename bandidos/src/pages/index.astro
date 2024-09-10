@@ -379,7 +379,7 @@ import NoiseBackground from '../components/NoiseBackground.astro';
       <section class="bg-black">
         <!-- Contenedor para la primera imagen -->
         <div class="relative overflow-hidden w-full">
-          <img src="/assets/Trazo.png" alt="Trazo" class="max-w-[300%] FirstBreakPoint:w-full" />
+          <img src="/assets/Trazo.png" alt="Trazo" style="transform: scaleX(-1) scaleY(-1);" class="max-w-[300%] FirstBreakPoint:w-full bg-secondary" />
         </div>
 
         <!-- Contenedor principal -->
@@ -393,10 +393,10 @@ import NoiseBackground from '../components/NoiseBackground.astro';
 
         <!-- Contenedor para la segunda imagen -->
         <div class="relative overflow-hidden w-full">
-          <img src="/assets/Trazo.png" alt="Trazo" style="transform: scaleX(-1) scaleY(-1);" class="max-w-[300%] FirstBreakPoint:w-full" />
+          <img src="/assets/Trazo.png" alt="Trazo" style="" class="max-w-[300%] FirstBreakPoint:w-full bg-secondary" />
         </div>
       </section>
-      <div class="flex flex-col justify-center max-w-8xl mx-auto mt-9">
+      <div class="flex flex-col justify-center max-w-8xl mx-auto pt-9 bg-secondary">
         <div class="ml-5 mr-5 text-center">
           <h1 class="font-GimbalExtendedRegular text-2xl sm:text-3xl FirstBreakPoint:text-6xl text-primary mb-6">imagenes destacadas</h1>
 
