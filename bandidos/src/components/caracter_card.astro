@@ -9,6 +9,7 @@ interface Item {
 }
 
 const { items } = Astro.props as { items: Item[] };
+
 ---
 <style>
   @font-face {
@@ -112,7 +113,7 @@ background: linear-gradient(236deg, rgba(145,145,145,1) 0%, rgba(61,61,61,1) 29%
         {item.character_image ? (
         <img class="w-full rounded-t image_caracter_card"
           src={item.character_image}
-          alt="Photo by aldi sigun on Unsplash" />
+          alt={item.title} />
         ) :         
         <video class="w-full rounded-t video_caracter_card" loop muted>
         <source type="video/mp4" src="/assets/blurrytv.mp4"/>

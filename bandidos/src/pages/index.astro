@@ -1,5 +1,9 @@
 ---
 import NoiseBackground from '../components/NoiseBackground.astro';
+
+import { Image } from "astro:assets";
+import trazoblanco from "/public/assets/trazoblanco.png";
+import trazo from "/public/assets/Trazo.png";
 ---
 
 <!doctype html>
@@ -379,21 +383,21 @@ import NoiseBackground from '../components/NoiseBackground.astro';
       <section class="bg-black">
         <!-- Contenedor para la primera imagen -->
         <div class="relative overflow-hidden w-full">
-          <img src="/assets/Trazo.png" alt="Trazo" style="transform: scaleX(-1) scaleY(-1);" class="max-w-[300%] FirstBreakPoint:w-full bg-secondary" />
+          <Image loading="lazy" src={trazo} alt="Trazo" style="transform: scaleX(-1) scaleY(-1);" class="max-w-[300%] FirstBreakPoint:w-full bg-secondary" />
         </div>
 
         <!-- Contenedor principal -->
         <div class="flex flex-col justify-center max-w-7xl mx-auto my-32">
           <div class="ml-5 mr-5 text-center fade-in flex flex-col gap-y-8">
             <h1 class="font-StreetSoul text-5xl sm:text-6xl FirstBreakPoint:text-8xl text-empty neon_green">Serie dramatica rodada en Madrid.</h1>
-            <img src="/assets/trazoblanco.png" class="mx-auto" style="filter:brightness(1)" />
+            <Image src={trazoblanco} alt="trazo_blanco" class="mx-auto" style="filter:brightness(1)" />
             <p class="text-2xl FirstBreakPoint:text-4xl" style="font-family: 'Times New Roman', Times, serif;">Bastardos es una serie dramática producida en Madrid, centrada en temas serios y profundos. Explora la complejidad de la vida y las decisiones humanas a través de una narrativa intensa y conmovedora. Su enfoque en la realidad y el drama ofrece una experiencia cinematográfica única, reflejando las luchas y conflictos internos de los personajes con una autenticidad impresionante.</p>
           </div>
         </div>
 
         <!-- Contenedor para la segunda imagen -->
         <div class="relative overflow-hidden w-full">
-          <img src="/assets/Trazo.png" alt="Trazo" style="" class="max-w-[300%] FirstBreakPoint:w-full bg-secondary" />
+          <Image src={trazo} alt="Trazo" style="" class="max-w-[300%] FirstBreakPoint:w-full bg-secondary" />
         </div>
       </section>
       <div class="flex flex-col justify-center max-w-8xl mx-auto pt-9 bg-secondary">
