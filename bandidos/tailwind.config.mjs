@@ -15,7 +15,10 @@ export default {
         terciary: '#FF9500',
         cuaternary: '#0BD31F',
         space: '#281445',
-        empty: '#f0f0f0'
+        empty: '#f0f0f0',
+        view_more: '#f0f0f079',
+        header_background: '#28144588',
+        wanted: '#b93131;'
       },
       fontFamily: {
         StreetSoul: ['StreetSoul', 'sans-serif'],
