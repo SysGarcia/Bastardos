@@ -1,5 +1,6 @@
 ---
 import NoiseBackground from '../components/NoiseBackground.astro';
+import Footer from '../components/footer.astro';
 
 import { Image } from 'astro:assets';
 import trazoblanco from '/public/assets/trazoblanco.png';
@@ -12,7 +13,7 @@ import trazo from '/public/assets/Trazo.png';
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bastardos 🎨</title>
+    <title>Bastardos 🚬</title>
     <style>
       @font-face {
         font-family: 'StreetSoul';
@@ -73,8 +74,8 @@ import trazo from '/public/assets/Trazo.png';
         -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
         transform: rotate(45deg);
 
-        border-right: 2px solid white;
-        border-bottom: 2px solid white;
+        border-right: 2px solid rgb(255, 255, 255);
+        border-bottom: 2px solid rgb(255, 255, 255);
         margin: 0 0 3px 4px;
 
         width: 16px;
@@ -129,7 +130,7 @@ import trazo from '/public/assets/Trazo.png';
         width: 24px;
         border-radius: 14px;
         transform: none;
-        border: 2px solid white;
+        border: 2px solid rgb(255, 255, 255);
         top: 170px;
       }
 
@@ -143,7 +144,7 @@ import trazo from '/public/assets/Trazo.png';
 
         height: 4px;
         width: 4px;
-        border: 2px solid #fff;
+        border: 2px solid #ffffff;
         -webkit-border-radius: 8px;
         border-radius: 8px;
       }
@@ -277,12 +278,12 @@ import trazo from '/public/assets/Trazo.png';
 
       .neon_green {
         text-shadow:
-          0 0 5px #4edd56,
-          0 0 10px #4edd56,
-          0 0 20px #4edd56,
-          0 0 40px #3ac441,
-          0 0 80px #3ac441,
-          0 0 90px #3ac441;
+        0 0 5px #4edd56,
+        0 0 10px #4edd56,
+        0 0 20px #4edd56,
+        0 0 40px #3ac441,
+        0 0 80px #3ac441,
+        0 0 90px #3ac441;
       }
 
       .neon_magenta {
@@ -294,7 +295,14 @@ import trazo from '/public/assets/Trazo.png';
           0 0 80px #a0178e,
           0 0 90px #a0178e;
       }
+
       /*
+      0 0 5px #303130,
+      0 0 10px #303130,
+      0 0 20px #303130,
+      0 0 40px #757575,
+      0 0 80px #757575,
+      0 0 90px #757575;
 
 			0 0 5px#f7f3c4,    
 			0 0 10px#f7f3c4,  
@@ -315,28 +323,28 @@ import trazo from '/public/assets/Trazo.png';
   <body class="bg-secondary text-empty flex flex-col h-screen">
     <NoiseBackground />
     <!-- Header -->
-    <header id="header" class="p-3 FirstBreakPoint:p-6 flex justify-center items-center bg-header_background font-StreetSoul z-20 fixed w-svw">
+    <header id="header" class="p-3 FirstBreakPoint:p-6 flex justify-center items-center bg-[#28144588] font-StreetSoul z-20 fixed w-svw"> <!--[#9696963d] -->
       <nav class="hidden FirstBreakPoint:flex space-x-20 font-GimbalExtendedRegular text-sm">
-        <a href="/" class="text-primary hover:text-empty transition-colors">inicio</a>
-        <a href="/personajes" class="text-primary hover:text-empty transition-colors">personajes</a>
-        <a href="/creditos" class="text-primary hover:text-empty transition-colors">créditos</a>
-        <a href="/contacto" class="text-primary hover:text-empty transition-colors">contacto</a>
+        <a href="/" class="text-primary transition-colors">inicio</a>
+        <a href="/personajes" class="text-primary transition-colors">personajes</a>
+        <a href="/creditos" class="text-primary transition-colors">créditos</a>
+        <a href="/contacto" class="text-primary transition-colors">contacto</a>
       </nav>
       <button id="menu-toggle" class="FirstBreakPoint:hidden flex items-center">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg class="w-6 h-6" fill="none" stroke="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
       </button>
     </header>
 
     <!-- Menu móvil -->
-    <nav id="mobile-menu" class="fixed inset-0 p-4 FirstBreakPoint:hidden hidden bg-space z-30 font-GimbalExtendedRegular h-60 w-svw">
+    <nav id="mobile-menu" class="fixed inset-0 p-4 FirstBreakPoint:hidden hidden bg-[#281445] z-30 font-GimbalExtendedRegular h-60 w-svw">
       <div class="flex justify-between items-center mb-4">
         <div class="text-2xl font-bold">
           <a href="/" class="text-primary text-4xl font-StreetSoul">Bastardos</a>
         </div>
         <button id="menu-close" class="flex items-center">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg class="w-6 h-6" fill="none" stroke="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
@@ -366,7 +374,7 @@ import trazo from '/public/assets/Trazo.png';
             <h1 class="text-primary font-StreetSoul text-8xl SecondBreakPoint:text-title_breakpoint FirstBreakPoint:text-title neon_magenta">Bastardos</h1>
             <h2 class="text-empty font-GimbalExtendedRegular text-base SecondBreakPoint:text-subtitle_breakpoint FirstBreakPoint:text-subtitle underline underline-offset-4">el precio de los pecados</h2>
           </div>
-          <a href="#" class="border border-primary rounded-full font-GimbalExtendedRegular text-xs FirstBreakPoint:text-base hover:text-view_more transition-colors px-5 mx-auto mt-1 sm:mt-5">ver trailer</a>
+          <a href="#" class="border text-empty border-primary rounded-full font-GimbalExtendedRegular text-xs FirstBreakPoint:text-base hover:text-view_more transition-colors px-5 mx-auto mt-1 sm:mt-5">ver trailer</a>
         </div>
         <div class="mouse_scroll">
           <div class="mouse">
@@ -380,7 +388,7 @@ import trazo from '/public/assets/Trazo.png';
         </div>
       </section>
 
-      <section class="bg-black pb-56">
+      <section class="bg-black">
         <!-- Contenedor para la primera imagen -->
         <div class="relative overflow-hidden w-full">
           <Image loading="lazy" src={trazo} alt="Trazo" style="transform: scaleX(-1) scaleY(-1);" class="max-w-[300%] FirstBreakPoint:w-full bg-secondary" />
@@ -391,18 +399,71 @@ import trazo from '/public/assets/Trazo.png';
           <div class="ml-5 mr-5 text-center fade-in flex flex-col gap-y-6">
             <h1 class="font-StreetSoul text-5xl sm:text-6xl FirstBreakPoint:text-8xl text-empty neon_green">Serie dramatica rodada en Madrid.</h1>
             <Image src={trazoblanco} alt="trazo_blanco" class="mx-auto" style="filter:brightness(1)" />
-            <p class="text-2xl FirstBreakPoint:text-4xl" style="font-family: 'Times New Roman', Times, serif;">Bastardos es un drama que ofrece un gran dilema al espectador y es si los criminales son criminales porque sí y casi por gusto o por el entorno en el cual se han criado y del que se han nutrido.</p>
+            <p class="text-xl FirstBreakPoint:text-4xl" style="font-family: 'Times New Roman', Times, serif;">Bastardos es un drama que ofrece un gran dilema al espectador y es si los criminales son criminales porque sí y casi por gusto o por el entorno en el cual se han criado y del que se han nutrido.</p>
           </div>
         </div>
+        <div class="relative overflow-hidden w-full pt-16">
+          <Image src={trazo} alt="Trazo" style="" class="max-w-[300%] FirstBreakPoint:w-full bg-secondary" />
+        </div> 
       </section>
-      <div class="bg-black">
-        <h1 class="font-StreetSoul text-6xl sm:text-8xl FirstBreakPoint:text-[12rem] text-empty text-center">Responsables</h1>
+      <div class="custom-heading-container flex justify-center">
+        <h1 class="font-StreetSoul text-6xl sm:text-8xl FirstBreakPoint:text-[12rem] text-empty relative">
+          Responsables
+          <a href="#" class="svg-link">
+            <svg viewBox="0 0 70 36">
+              <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527" />
+            </svg>
+          </a>
+        </h1>
+      </div>
+      <style>
+
+          .custom-heading-container h1 {
+              position: relative;
+              z-index: 1; /* Asegúrate de que el texto esté por encima del SVG */
+          }
+
+          .svg-link {
+              display: block; /* Cambia de inline-block a block para que pueda rodear todo el h1 */
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 90%; /* Asegura que el SVG se expanda para rodear el texto */
+              height: 90%;
+              z-index: 0; /* Coloca el SVG detrás del texto */
+              
+          }
+
+          .svg-link svg {
+              width: 100%;
+              height: 110%;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              fill: none;
+              stroke: var(--stroke, #ffffff); /* Valor predeterminado si no se define --stroke */
+              stroke-linecap: round;
+              stroke-width: 2px;
+              stroke-dasharray: var(--offset, 69px) 278px;
+              stroke-dashoffset: 361px;
+              transition: stroke 0.25s ease-in-out var(--stroke-delay, 0s), stroke-dasharray 0.35s ease-in-out;
+          }
+
+          .svg-link:hover {
+              --spacing: 4px;
+              --stroke: #d33838; /* Color del trazo al hacer hover, por ejemplo rojo */
+              --stroke-delay: 0.1s;
+              --offset: 180px;
+          }
+      </style>
         <section>
           <div class="flex flex-col md:flex-row gap-16 justify-center">
             <div class="gap-8 items-center py-4 max-w-screen-xl flex flex-col relative">
               <div class="relative group">
                 <!-- Imagen -->
-                <img src="/assets/ImagenCopo.png" class="w-[360px] md:w-[700px] border-2 border-black transition-opacity duration-300 ease-in-out group-hover:opacity-0" />
+                <img src="/assets/ImagenCopo.png" class="w-[330px] md:w-[700px] border-2 border-black transition-opacity duration-300 ease-in-out group-hover:opacity-0" />
                 
                 <!-- Texto sobre la imagen -->
                 <h2 class="mb-4 text-2xl sm:text-3xl tracking-tight font-extrabold text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-10" style="font-family: 'Times New Roman', Times, serif;">
@@ -410,7 +471,7 @@ import trazo from '/public/assets/Trazo.png';
                 </h2>
                 
                 <!-- Fondo negro -->
-                <div class="absolute inset-0 bg-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-0"></div>
+                <div class="absolute inset-0 bg-[#d33838] opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-0"></div>
               </div>
             </div>
           
@@ -418,7 +479,7 @@ import trazo from '/public/assets/Trazo.png';
               <div class="gap-8 items-center py-4 max-w-screen-xl flex flex-col relative">
                 <div class="relative group">
                   <!-- Imagen -->
-                  <img src="/assets/ImagenCopo.png" class="w-[360px] md:w-[700px] border-2 border-black transition-opacity duration-300 ease-in-out group-hover:opacity-0" />
+                  <img src="/assets/ImagenCopo.png" class="w-[330px] md:w-[700px] border-2 border-black transition-opacity duration-300 ease-in-out group-hover:opacity-0" />
                   
                   <!-- Texto sobre la imagen -->
                   <h2 style="font-family: 'Times New Roman', Times, serif;" class="mb-4 text-2xl sm:text-3xl font-extrabold text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-10">
@@ -426,67 +487,38 @@ import trazo from '/public/assets/Trazo.png';
                   </h2>
                   
                   <!-- Fondo negro -->
-                  <div class="absolute inset-0 bg-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-0"></div>
+                  <div class="absolute inset-0 bg-[#d33838] opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-0"></div>
                 </div>
               </div>
 
         </section>
+
         <div class="relative overflow-hidden w-full">
-          <Image src={trazo} alt="Trazo" style="" class="max-w-[300%] FirstBreakPoint:w-full bg-secondary" />
-        </div> 
-      </div>
-
-      <div class="flex flex-col justify-center max-w-8xl mx-auto pt-9 bg-secondary">
-        <div class="ml-5 mr-5 text-center">
-          <h1 class="font-GimbalExtendedRegular text-2xl sm:text-3xl FirstBreakPoint:text-6xl text-primary mb-6">imagenes destacadas</h1>
-
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="grid gap-4">
-              <div class="h-full overflow-hidden rounded-lg">
-                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="/assets/escape.jpeg" alt="" />
-              </div>
-              <div class="h-full overflow-hidden rounded-lg">
-                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="" />
-              </div>
-              <div class="h-full overflow-hidden rounded-lg">
-                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="" />
-              </div>
-            </div>
-            <div class="grid gap-4">
-              <div class="h-full overflow-hidden rounded-lg">
-                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="/assets/escape.jpeg" alt="" />
-              </div>
-              <div class="h-full overflow-hidden rounded-lg">
-                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="" />
-              </div>
-              <div class="h-full overflow-hidden rounded-lg">
-                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="" />
-              </div>
-            </div>
-            <div class="grid gap-4">
-              <div class="h-full overflow-hidden rounded-lg">
-                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="" />
-              </div>
-              <div class="h-full overflow-hidden rounded-lg">
-                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="" />
-              </div>
-              <div class="h-full overflow-hidden rounded-lg">
-                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="" />
-              </div>
-            </div>
-            <div class="grid gap-4">
-              <div class="h-full overflow-hidden rounded-lg">
-                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="" />
-              </div>
-              <div class="h-full overflow-hidden rounded-lg">
-                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="/assets/escape.jpeg" alt="" />
-              </div>
-              <div class="h-full overflow-hidden rounded-lg">
-                <img class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="" />
-              </div>
+          <Image loading="lazy" src={trazo} alt="Trazo" style="transform: scaleX(-1) scaleY(-1);" class="max-w-[300%] FirstBreakPoint:w-full bg-secondary" />
+        </div>
+        <div class=" bg-black">
+          <div class="flex justify-center flex-col max-w-7xl mx-auto">
+            <h1 class="font-StreetSoul text-6xl sm:text-8xl FirstBreakPoint:text-[12rem] text-empty text-center neon_green mt-20 mb-5">
+              Making Off
+            </h1>
+            <p class="text-xl FirstBreakPoint:text-4xl text-center ml-5 mr-5" style="font-family: 'Times New Roman', Times, serif;">El <em>Making Off</em> de Bastardos ha sido una tarea compleja, que ha llevado de más de <em><b> 1 año de preparación</b></em>. En el siguiente video ilustrativo, se habla con los creadores
+            sobre temas como los pasos que se han seguido a la hora de crear la serie, la evolución, grabaciones sin un presupuesto, etc. </p>
+            <div
+              class="embed-responsive embed-responsive-21by9 relative w-full overflow-hidden mt-7"
+              style="padding-top: 42.857143%">
+              <iframe
+                class="embed-responsive-item absolute bottom-0 left-0 right-0 top-0 h-full w-[98%] mx-auto"
+                src="https://www.youtube.com/embed/vlDzYIIOYmM?enablejsapi=1&amp;origin=https%3A%2F%2Fmdbootstrap.com"
+                allowfullscreen=""
+                data-gtm-yt-inspected-2340190_699="true"
+                id="240632615"></iframe>
             </div>
           </div>
         </div>
+        <div class="relative overflow-hidden w-full">
+          <Image src={trazo} alt="Trazo" style="" class="max-w-[300%] FirstBreakPoint:w-full bg-secondary" />
+        </div> 
+        <Footer />
       </div>
 
       <script>
