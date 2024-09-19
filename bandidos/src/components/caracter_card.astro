@@ -9,96 +9,98 @@ interface Item {
 }
 
 const { items } = Astro.props as { items: Item[] };
-
 ---
+
 <style>
   @font-face {
-      font-family: 'StreetSoul';
-      src: url('../fonts/StreetSoul.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
+    font-family: 'StreetSoul';
+    src: url('../fonts/StreetSoul.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
   }
 
   @font-face {
-      font-family: 'GimbalExtendedRegular';
-      src: url('../fonts/GimbalExtendedRegular.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
+    font-family: 'GimbalExtendedRegular';
+    src: url('../fonts/GimbalExtendedRegular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
   }
 
   @font-face {
-      font-family: 'SteelFish';
-      src: url('../fonts/steelfish.otf') format('opentype');
-      font-weight: normal;
-      font-style: normal;
+    font-family: 'SteelFish';
+    src: url('../fonts/steelfish.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
   }
 
   /* Para que los contenedores tengan el mismo tamaño y ocupen más espacio */
   .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 400px;
-      max-width: 500px; /* Anchura máxima aumentada para que ocupen más espacio */
-      width: calc(100% - 40px); /* Para que ocupen el ancho con márgenes reducidos */
-      margin: 20px; /* Márgenes laterales reducidos */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px;
+    max-width: 500px; /* Anchura máxima aumentada para que ocupen más espacio */
+    width: calc(100% - 40px); /* Para que ocupen el ancho con márgenes reducidos */
+    margin: 20px; /* Márgenes laterales reducidos */
   }
 
-  .image_caracter_card, .video_caracter_card {
-      transition: filter 0.5s, transform 0.5s;
-      filter: blur(20px) brightness(1);
-      transform: scale(1.1);
-      height: 480px; /* Altura fija para las imágenes y videos */
-      width: 100%;
-      object-fit: cover;
-      cursor: pointer;
+  .image_caracter_card,
+  .video_caracter_card {
+    transition:
+      filter 0.5s,
+      transform 0.5s;
+    filter: blur(20px) brightness(1);
+    transform: scale(1.1);
+    height: 480px; /* Altura fija para las imágenes y videos */
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
   }
 
   .image_caracter_card:hover {
-      filter: blur(0px);
-      transform: scale(1.2);
+    filter: blur(0px);
+    transform: scale(1.2);
   }
 
   .video_caracter_card {
-      filter: brightness(40%);
+    filter: brightness(40%);
   }
 
   .video_caracter_card:hover {
-      filter: blur(0px) brightness(30%);
-      transform: scale(1.2);
+    filter: blur(0px) brightness(30%);
+    transform: scale(1.2);
   }
 
   .text-container {
-      padding: 10px;
-      flex-grow: 1;
+    padding: 10px;
+    flex-grow: 1;
   }
 
   .quote {
-    font-size: 1.4rem; 
-    font-weight: bold; 
-    line-height: 1; 
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1;
     vertical-align: middle;
   }
 
   .cite-text {
     font-style: italic; /* Hacer el texto de la cita en cursiva */
   }
-
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const videos = document.querySelectorAll("video");
+  document.addEventListener('DOMContentLoaded', () => {
+    const videos = document.querySelectorAll('video');
 
     videos.forEach((video) => {
-      video.addEventListener("mouseenter", () => {
+      video.addEventListener('mouseenter', () => {
         // Pausar todos los videos antes de reproducir uno
-        videos.forEach(v => v.pause());
-        video.play();  // Reproducir el video al hacer hover
+        videos.forEach((v) => v.pause());
+        video.play(); // Reproducir el video al hacer hover
       });
 
-      video.addEventListener("mouseleave", () => {
-        video.pause();  // Pausar el video al salir del hover
+      video.addEventListener('mouseleave', () => {
+        video.pause(); // Pausar el video al salir del hover
         video.currentTime = 0; // Reiniciar el video
       });
     });
@@ -106,44 +108,54 @@ const { items } = Astro.props as { items: Item[] };
 </script>
 
 <div class="flex flex-wrap items-center justify-center">
-  {items.map((item) => (
-    <div class="container max-w-sm rounded dark:bg-gray-800 shadow-lg transform duration-200 easy-in-out m-9" style="background: rgb(145,145,145);
+  {
+    items.map((item) => (
+      <div
+        class="container max-w-sm rounded dark:bg-gray-800 shadow-lg transform duration-200 easy-in-out m-9"
+        style="background: rgb(145,145,145);
 background: linear-gradient(236deg, rgba(145,145,145,1) 0%, rgba(61,61,61,1) 29%, rgba(0,0,0,1) 62%);">
-      <div class="h-full overflow-hidden">
-        {item.character_image ? (
-        <img class="w-full rounded-t image_caracter_card"
-          src={item.character_image}
-          alt={item.title} />
-        ) :         
-        <video class="w-full rounded-t video_caracter_card" loop muted>
-        <source type="video/mp4" src="/assets/blurrytv.mp4"/>
-        </video>}
-      </div>
-      <div class="">
-        <div class="px-7 mb-8">
-          {item.main_character ? (
-          <h2 class="text-5xl font-bold text-cuaternary dark:text-gray-300 font-StreetSoul mt-2 underline decoration-solid decoration-4 underline-offset-0">{item.title}</h2>
-          ) : item.secondary_character ? (
-          <h2 class="text-5xl font-bold text-cuaternary dark:text-gray-300 font-StreetSoul mt-2">{item.title}</h2>
+        <div class="h-full overflow-hidden">
+          {item.character_image ? (
+            <img class="w-full rounded-t image_caracter_card" src={item.character_image} alt={item.title} />
           ) : (
-          <h2 class="text-5xl font-bold text-wanted font-StreetSoul mt-2">Se busca</h2>
+            <video class="w-full rounded-t video_caracter_card" loop muted>
+              <source type="video/mp4" src="/assets/blurrytv.mp4" />
+            </video>
           )}
-          <div class="quote-container">
-            {item.cite ? (
-              <p class="cite-text">
-                <span class="quote" style="margin-right: 2px;">“</span>{item.cite}<span class="quote" style="margin-left: 1px;">”</span>
-              </p>
-            ) : (
-              <p class="cite-text">
-                <span class="quote" style="margin-right: 2px;">“</span>No hay cita<span class="quote" style="margin-left: 1px;">”</span>
-              </p>
-            )}
-          </div>
+        </div>
+        <div class="">
+          <div class="px-7 mb-8">
+            {item.main_character ? <h2 class="text-5xl font-bold text-cuaternary dark:text-gray-300 font-StreetSoul mt-2 underline decoration-solid decoration-4 underline-offset-0">{item.title}</h2> : item.secondary_character ? <h2 class="text-5xl font-bold text-cuaternary dark:text-gray-300 font-StreetSoul mt-2">{item.title}</h2> : <h2 class="text-5xl font-bold text-wanted font-StreetSoul mt-2">Se busca</h2>}
+            <div class="quote-container">
+              {item.cite ? (
+                <p class="cite-text">
+                  <span class="quote" style="margin-right: 2px;">
+                    “
+                  </span>
+                  {item.cite}
+                  <span class="quote" style="margin-left: 1px;">
+                    ”
+                  </span>
+                </p>
+              ) : (
+                <p class="cite-text">
+                  <span class="quote" style="margin-right: 2px;">
+                    “
+                  </span>
+                  No hay cita
+                  <span class="quote" style="margin-left: 1px;">
+                    ”
+                  </span>
+                </p>
+              )}
+            </div>
 
-          <p class="mt-2 text-empty dark:text-gray-300" style="font-family: 'Times New Roman', Times, serif;">{item.description}</p>
+            <p class="mt-2 text-empty dark:text-gray-300" style="font-family: 'Times New Roman', Times, serif;">
+              {item.description}
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>))
+    ))
   }
 </div>
-

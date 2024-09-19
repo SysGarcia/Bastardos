@@ -1,9 +1,9 @@
 ---
 import NoiseBackground from '../components/NoiseBackground.astro';
 
-import { Image } from "astro:assets";
-import trazoblanco from "/public/assets/trazoblanco.png";
-import trazo from "/public/assets/Trazo.png";
+import { Image } from 'astro:assets';
+import trazoblanco from '/public/assets/trazoblanco.png';
+import trazo from '/public/assets/Trazo.png';
 ---
 
 <!doctype html>
@@ -366,7 +366,7 @@ import trazo from "/public/assets/Trazo.png";
             <h1 class="text-primary font-StreetSoul text-8xl SecondBreakPoint:text-title_breakpoint FirstBreakPoint:text-title neon_magenta">Bastardos</h1>
             <h2 class="text-empty font-GimbalExtendedRegular text-base SecondBreakPoint:text-subtitle_breakpoint FirstBreakPoint:text-subtitle underline underline-offset-4">el precio de los pecados</h2>
           </div>
-          <a href="#" class="border border-primary rounded-full font-GimbalExtendedRegular text-xs FirstBreakPoint:text-base hover:text-view_more transition-colors px-5 mx-auto mt-1 sm:mt-5 ">ver trailer</a>
+          <a href="#" class="border border-primary rounded-full font-GimbalExtendedRegular text-xs FirstBreakPoint:text-base hover:text-view_more transition-colors px-5 mx-auto mt-1 sm:mt-5">ver trailer</a>
         </div>
         <div class="mouse_scroll">
           <div class="mouse">
@@ -380,26 +380,62 @@ import trazo from "/public/assets/Trazo.png";
         </div>
       </section>
 
-      <section class="bg-black">
+      <section class="bg-black pb-56">
         <!-- Contenedor para la primera imagen -->
         <div class="relative overflow-hidden w-full">
           <Image loading="lazy" src={trazo} alt="Trazo" style="transform: scaleX(-1) scaleY(-1);" class="max-w-[300%] FirstBreakPoint:w-full bg-secondary" />
         </div>
 
         <!-- Contenedor principal -->
-        <div class="flex flex-col justify-center max-w-7xl mx-auto my-32">
-          <div class="ml-5 mr-5 text-center fade-in flex flex-col gap-y-8">
+        <div class="flex flex-col justify-center max-w-7xl mx-auto mt-32">
+          <div class="ml-5 mr-5 text-center fade-in flex flex-col gap-y-6">
             <h1 class="font-StreetSoul text-5xl sm:text-6xl FirstBreakPoint:text-8xl text-empty neon_green">Serie dramatica rodada en Madrid.</h1>
             <Image src={trazoblanco} alt="trazo_blanco" class="mx-auto" style="filter:brightness(1)" />
-            <p class="text-2xl FirstBreakPoint:text-4xl" style="font-family: 'Times New Roman', Times, serif;">Bastardos es una serie dramática producida en Madrid, centrada en temas serios y profundos. Explora la complejidad de la vida y las decisiones humanas a través de una narrativa intensa y conmovedora. Su enfoque en la realidad y el drama ofrece una experiencia cinematográfica única, reflejando las luchas y conflictos internos de los personajes con una autenticidad impresionante.</p>
+            <p class="text-2xl FirstBreakPoint:text-4xl" style="font-family: 'Times New Roman', Times, serif;">Bastardos es un drama que ofrece un gran dilema al espectador y es si los criminales son criminales porque sí y casi por gusto o por el entorno en el cual se han criado y del que se han nutrido.</p>
           </div>
         </div>
+      </section>
+      <div class="bg-black">
+        <h1 class="font-StreetSoul text-6xl sm:text-8xl FirstBreakPoint:text-[12rem] text-empty text-center">Responsables</h1>
+        <section>
+          <div class="flex flex-col md:flex-row gap-16 justify-center">
+            <div class="gap-8 items-center py-4 max-w-screen-xl flex flex-col relative">
+              <div class="relative group">
+                <!-- Imagen -->
+                <img src="/assets/ImagenCopo.png" class="w-[360px] md:w-[700px] border-2 border-black transition-opacity duration-300 ease-in-out group-hover:opacity-0" />
+                
+                <!-- Texto sobre la imagen -->
+                <h2 class="mb-4 text-2xl sm:text-3xl tracking-tight font-extrabold text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-10" style="font-family: 'Times New Roman', Times, serif;">
+                  Samuel Fernández López
+                </h2>
+                
+                <!-- Fondo negro -->
+                <div class="absolute inset-0 bg-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-0"></div>
+              </div>
+            </div>
+          
+            <div class="flex flex-row gap-16 justify-center">
+              <div class="gap-8 items-center py-4 max-w-screen-xl flex flex-col relative">
+                <div class="relative group">
+                  <!-- Imagen -->
+                  <img src="/assets/ImagenCopo.png" class="w-[360px] md:w-[700px] border-2 border-black transition-opacity duration-300 ease-in-out group-hover:opacity-0" />
+                  
+                  <!-- Texto sobre la imagen -->
+                  <h2 style="font-family: 'Times New Roman', Times, serif;" class="mb-4 text-2xl sm:text-3xl font-extrabold text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-10">
+                    Patricia Carvajal Sánchez 
+                  </h2>
+                  
+                  <!-- Fondo negro -->
+                  <div class="absolute inset-0 bg-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-0"></div>
+                </div>
+              </div>
 
-        <!-- Contenedor para la segunda imagen -->
+        </section>
         <div class="relative overflow-hidden w-full">
           <Image src={trazo} alt="Trazo" style="" class="max-w-[300%] FirstBreakPoint:w-full bg-secondary" />
-        </div>
-      </section>
+        </div> 
+      </div>
+
       <div class="flex flex-col justify-center max-w-8xl mx-auto pt-9 bg-secondary">
         <div class="ml-5 mr-5 text-center">
           <h1 class="font-GimbalExtendedRegular text-2xl sm:text-3xl FirstBreakPoint:text-6xl text-primary mb-6">imagenes destacadas</h1>
@@ -450,7 +486,6 @@ import trazo from "/public/assets/Trazo.png";
               </div>
             </div>
           </div>
-          
         </div>
       </div>
 
